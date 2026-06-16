@@ -1227,6 +1227,20 @@
         </div>
       </div>
 
+      <div style="background:var(--surface); border:1px solid rgba(255,166,87,0.3); border-radius:12px; overflow:hidden; grid-column:1/-1; transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent4)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(255,166,87,0.12)'" onmouseout="this.style.borderColor='rgba(255,166,87,0.3)';this.style.transform='';this.style.boxShadow=''">
+        <div style="padding:1rem 1.25rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,166,87,0.1);border:1px solid rgba(255,166,87,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;">🏅</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--text);">Certificate of Academic Honour — <span style="color:var(--accent4);">Cum Laude</span></div>
+            <div style="font-size:12px;color:var(--muted);">Bahria University Islamabad · CGPA 3.74/4.00 · Master of Science in Data Science · 05 June 2022</div>
+          </div>
+        </div>
+        <div style="padding:1rem; cursor:pointer;" onclick="this.querySelector('img').style.display=this.querySelector('img').style.display==='none'?'block':'none'; this.querySelector('.hint').style.display='none';">
+          <p class="hint" style="font-size:12px;color:var(--muted);text-align:center;padding:0.5rem 0;">Click to view certificate</p>
+          <img src="cum_laude.jpg" alt="Certificate of Academic Honour — Cum Laude" style="width:60%;display:none;border-radius:8px;border:1px solid var(--border);margin:0 auto;" />
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
