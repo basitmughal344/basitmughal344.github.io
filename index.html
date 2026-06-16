@@ -451,6 +451,22 @@
   }
   .cert-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; margin-top: 5px; }
 
+  /* CERT CARDS */
+  .cert-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .cert-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 28px rgba(88,166,255,0.1); }
+  .cert-card-header { padding: 1rem 1.25rem; }
+  .cert-issuer-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-bottom: 8px; }
+  .cert-card-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
+  .cert-card-meta { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .cert-verify { font-size: 11px; color: var(--accent); text-decoration: none; }
+  .cert-verify:hover { text-decoration: underline; }
+  .cert-img { width: 100%; display: none; border-top: 1px solid var(--border); }
+  .cert-img.open { display: block; }
+
   /* CONTACT */
   .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .contact-card {
@@ -1116,17 +1132,87 @@
     <div class="section-header">
       <h2>Certifications</h2>
       <div class="section-line"></div>
-      <span class="count-badge">8 certs</span>
+      <span class="count-badge">7 certs</span>
     </div>
-    <div class="cert-list">
-      <div class="cert-item"><div class="cert-dot"></div>Machine Learning with Python — IBM via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Introduction to Computer Vision and Image Processing — IBM via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Fundamentals of Machine Learning for Healthcare — Stanford University via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Data Analysis with Python — IBM via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Computer Vision in Microsoft Azure — Microsoft via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Data Visualization and Dashboards with Excel and Cognos — IBM via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Microsoft Azure Machine Learning for Data Scientists — Microsoft via Coursera</div>
-      <div class="cert-item"><div class="cert-dot"></div>Google Cloud Big Data and Machine Learning Fundamentals — Google via Coursera</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+
+      <!-- 1 -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#e8f0fe;color:#1a73e8;">IBM</div>
+          <div class="cert-card-title">Machine Learning with Python</div>
+          <div class="cert-card-meta">IBM · Coursera · Oct 2023</div>
+          <a href="https://coursera.org/verify/FHCX5Y3JV3E5" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_ml_python.jpg" class="cert-img" alt="Machine Learning with Python certificate" />
+      </div>
+
+      <!-- 2 -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#e8f0fe;color:#1a73e8;">IBM</div>
+          <div class="cert-card-title">Introduction to Computer Vision and Image Processing</div>
+          <div class="cert-card-meta">IBM · Coursera · Oct 2023</div>
+          <a href="https://coursera.org/verify/7MMZX53HZL55" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_cv_image.jpg" class="cert-img" alt="Computer Vision certificate" />
+      </div>
+
+      <!-- 3 -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#fce8e6;color:#c5221f;">Stanford</div>
+          <div class="cert-card-title">Fundamentals of Machine Learning for Healthcare</div>
+          <div class="cert-card-meta">Stanford University · Coursera · Dec 2023</div>
+          <a href="https://coursera.org/verify/28Q62NZP4JF8" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_ml_healthcare.jpg" class="cert-img" alt="ML for Healthcare certificate" />
+      </div>
+
+      <!-- 4 -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#e6f4ea;color:#137333;">Microsoft</div>
+          <div class="cert-card-title">Microsoft Azure Machine Learning for Data Scientists</div>
+          <div class="cert-card-meta">Microsoft · Coursera · Nov 2023</div>
+          <a href="https://coursera.org/verify/MMF4Q3VX97VW" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_azure_ml.jpg" class="cert-img" alt="Azure ML certificate" />
+      </div>
+
+      <!-- 5 -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#e8f0fe;color:#1a73e8;">IBM</div>
+          <div class="cert-card-title">Data Analysis with Python</div>
+          <div class="cert-card-meta">IBM · Coursera · Nov 2023</div>
+          <a href="https://coursera.org/verify/UXVMAAYDRQVK" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_data_analysis.jpg" class="cert-img" alt="Data Analysis with Python certificate" />
+      </div>
+
+      <!-- 6 -->
+      <div class="cert-card" onclick="toggleCert(this)">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#e8f0fe;color:#1a73e8;">IBM</div>
+          <div class="cert-card-title">Data Visualization and Dashboards with Excel and Cognos</div>
+          <div class="cert-card-meta">IBM · Coursera · Nov 2023</div>
+          <a href="https://coursera.org/verify/5WPEAD3KYB68" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_data_viz.jpg" class="cert-img" alt="Data Visualization certificate" />
+      </div>
+
+      <!-- 7 -->
+      <div class="cert-card" onclick="toggleCert(this)" style="grid-column: 2;">
+        <div class="cert-card-header">
+          <div class="cert-issuer-badge" style="background:#e6f4ea;color:#137333;">Google</div>
+          <div class="cert-card-title">Google Cloud Big Data and Machine Learning Fundamentals</div>
+          <div class="cert-card-meta">Google Cloud · Coursera · Nov 2023</div>
+          <a href="https://coursera.org/verify/276N8R46RHRK" target="_blank" onclick="event.stopPropagation()" class="cert-verify">↗ Verify</a>
+        </div>
+        <img src="cert_google_cloud.jpg" class="cert-img" alt="Google Cloud ML certificate" />
+      </div>
+
     </div>
   </div>
 </section>
@@ -1262,6 +1348,11 @@
 
 <script>
 // Tab switcher
+function toggleCert(card) {
+  const img = card.querySelector('.cert-img');
+  img.classList.toggle('open');
+}
+
 function showTab(id, btn) {
   document.querySelectorAll('.pub-list').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.pub-tab').forEach(el => el.classList.remove('active'));
